@@ -16,7 +16,9 @@ class Register extends StatelessWidget
     ),
     backgroundColor: Colors.white,
     body:
-    Center(child:Container(
+    Center(child: Column(
+      children: <Widget>[    
+    Container(
       margin: EdgeInsets.only(top:20.0),
       alignment: Alignment.topCenter,
       width: 250,
@@ -27,7 +29,20 @@ class Register extends StatelessWidget
   ),
 ), 
 ),
+   Container(
+      margin: EdgeInsets.only(top:20.0),
+      alignment: Alignment.topCenter,
+      width: 250,
+      child:TextFormField(
+  decoration: InputDecoration(
+    labelText: 'Phone Number',
+    
+  ),
+), 
 )
+]
+    ),
+),
     );
   }
 }
