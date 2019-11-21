@@ -1,6 +1,40 @@
+import 'dart:io';
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
-class Register extends StatelessWidget {
+
+class Register extends StatefulWidget
+{
+ @override
+  State<StatefulWidget> createState() {
+    return _Register();
+  }
+}
+
+
+class _Register extends State <Register> {
+
+   var _image= "assets/user-unknown.png";
+   //final _realImage=null;
+    File _realImage;
+    
+
+  void setImg() async {
+    File imag1;
+  //  ImagePicker.pickImage(source: ImageSource.gallery, maxWidth: 200.00, maxHeight: 200.00).then((File image){
+  //     imag1=image;
+  //  });
+      imag1= await ImagePicker.pickImage(source: ImageSource.gallery, maxWidth: 200.00, maxHeight: 200.00);
+    setState( (){
+       _realImage=imag1;
+      // _image="assets/DP-1.jpeg";
+    });
+
+    
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +57,11 @@ class Register extends StatelessWidget {
             alignment: Alignment.topCenter,
             width: 250,
             child: TextFormField(
+            
               decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.green),
+          ),
                 labelText: 'Name',
               ),
             ),
@@ -35,20 +73,42 @@ class Register extends StatelessWidget {
             child: TextFormField(
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Colors.green),
+          ),
                 labelText: 'Phone Number',
               ),
             ),
           ),
-          Container(
-              margin: EdgeInsets.all(40.0),
-              width: 175.0,
-              height: 190.0,
-              decoration: new BoxDecoration(
+
+        Container(
+              margin: EdgeInsets.only(top:50.0, bottom: 20.0),
+              width: 200.0,
+              height: 200.0,
+              decoration:  BoxDecoration(
+                  border: Border.all(color: Colors.black, style: BorderStyle.solid, width: 2.0),
                   shape: BoxShape.circle,
-                  image: new DecorationImage(
-                      fit: BoxFit.fill,
-                      image: ExactAssetImage('assets/DP-1.jpeg')))),
-          Text("Shahrukh", textScaleFactor: 1.5)
+                  image:  DecorationImage(
+                      fit: BoxFit.cover,
+                      image: _realImage==null? AssetImage(_image) : FileImage(_realImage))))
+        ,
+
+        GestureDetector(
+          onTap: setImg,
+          child: Text("Edit Photo",
+        style: TextStyle(color: Colors.blue, fontSize: 20),),),
+          Container(
+          margin: EdgeInsets.only(left: 10.0, top:30.0),
+         width: 120.0,
+         height: 50.0,
+         child: RaisedButton(
+            onPressed: (){},
+            color: Colors.green,
+            textColor: Colors.white,
+            child: Text("Next", 
+            style: TextStyle(fontSize: 20),
+                   textAlign: TextAlign.center),
+          ) )
         ]),
       ),
     );
