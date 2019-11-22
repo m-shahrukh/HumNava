@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:hum_nava/completeregister.dart';
 import 'package:image_picker/image_picker.dart';
 
 
@@ -102,12 +103,16 @@ class _Register extends State <Register> {
          width: 120.0,
          height: 50.0,
          child: RaisedButton(
-            onPressed: (){},
+            
+            onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> CompleteRegister()));
+
+            },
             color: Colors.green,
             textColor: Colors.white,
             child: Text("Next", 
             style: TextStyle(fontSize: 20),
-                   textAlign: TextAlign.center),
+            textAlign: TextAlign.center),
           ) )
         ]),
       ),

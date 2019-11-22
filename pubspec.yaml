@@ -26,6 +26,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   image_picker: ^0.6.2
+  emoji_picker: ^0.0.2
+
 
 
 dev_dependencies:
@@ -49,6 +51,7 @@ flutter:
      - assets/Logo.jpeg
      - assets/DP-1.jpeg
      - assets/user-unknown.png
+     - assets/green_tick.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

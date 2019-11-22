@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hum_nava/register.dart';
+import './translate.dart';
 
 
 class HumNavaLandingPage extends StatelessWidget
@@ -67,7 +68,10 @@ class HumNavaLandingPage extends StatelessWidget
                 child: Text("Translate",
                                    style: TextStyle(fontSize: 23),
                    textAlign: TextAlign.center,),
-                onPressed: (){}
+                onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Translate()));
+
+                }
                 ),
               ),
               ]),
