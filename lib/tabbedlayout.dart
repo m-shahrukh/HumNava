@@ -12,8 +12,12 @@ class TabbedLayout extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          // #39CA87DE
+          backgroundColor:Colors.green,
           bottom: TabBar(
+            indicatorColor: Colors.lightGreenAccent,
+            indicatorWeight: 3.5,
+
             tabs: [
 
               Tab(icon: Text('Chat',
@@ -55,7 +59,11 @@ class TabbedLayout extends StatelessWidget {
             ),
           ],
         ),
-        floatingActionButton: FloatingActionButton(
+        floatingActionButton: Container(
+          width: 70,
+          height: 70,
+          child:FloatingActionButton(
+
           onPressed: (){
             Navigator.push(
               context,
@@ -65,6 +73,7 @@ class TabbedLayout extends StatelessWidget {
           backgroundColor: Colors.green,
           tooltip: 'NewChat',
           child: Icon(Icons.add),
+        )
         ),
 
       ),
@@ -122,7 +131,7 @@ List<Widget> list = <Widget>[
   ),
   new ListTile(
     title: new Text('Ali Khan',
-        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 25.0)),
+    style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 25.0)),
     //subtitle: new Text('2550 Mission St'),
     leading: new Icon(
       Icons.account_circle,

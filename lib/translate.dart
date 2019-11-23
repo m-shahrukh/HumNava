@@ -1,55 +1,99 @@
 import 'package:flutter/material.dart';
-import 'package:emoji_picker/emoji_picker.dart';
 
 
-
-class Translate extends StatelessWidget
+class Translate extends StatefulWidget
 {
-
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    
-        appBar: AppBar(
-          title: Text("Flutter Emoji Picker Example"),
-        ),
-        body: MainPage(),
-  );
-}
-
+ @override
+  State<StatefulWidget> createState() {
+    return _Translate();
+  }
 }
 
 
-class MainPage extends StatefulWidget {
+class _Translate extends State <Translate> {
   @override
-  MainPageState createState() => new MainPageState();
-}
-
-class MainPageState extends State<MainPage> {
-  @override
-
-  //List<Emoji> _list_emojis;
   Widget build(BuildContext context) {
-    return 
-    
-    Column(
-      
-      children: <Widget> [EmojiPicker(
-      rows: 3,
-      columns: 7,
-      recommendKeywords: ["racing", "horse"],
-      numRecommended: 10,
-      onEmojiSelected: (emoji, category) {
-        print(emoji);
-        
-      },
-    ),
-    Container(
-      child:Row(
-        children: <Widget> [Icon(Icons.audiotrack, color: Colors.red, size:30.0),
-        Icon(Icons.battery_full, color: Colors.red, size:30.0)],)
-    )
-    ]
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
+          title: Text(
+            'Translate',
+            style: TextStyle(
+              fontSize: 22,
+              color: Colors.black,
+            ),
+          )),
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
+      body: Center(
+        child:Column(children: <Widget>[
+          Container(
+            alignment: Alignment.topCenter,
+            child: Row(children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 40.0, left: 20),
+            alignment: Alignment.topCenter,
+            width: 300,
+            child: TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'Type here..'
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top:40, left: 20),
+            alignment: Alignment.topRight,
+            width: 50,
+            child: InkWell(
+              child: FlatButton(
+              onPressed: null,
+              padding: EdgeInsets.all(0.0),
+              child: Image.asset('assets/gree4.png')
+              )
+              )
+          ),
+        ])
+            ),
+
+
+
+
+            Container(
+            alignment: Alignment.topCenter,
+            child: Row(children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 40.0, left: 20),
+            alignment: Alignment.topLeft,
+            width: 125,
+            child: Text("Translate From: ",
+            style: TextStyle(fontSize: 17.5),),
+          ),
+
+          Container(
+                margin: EdgeInsets.only(top:40.0,left: 10),
+                alignment: Alignment.topLeft,
+                width: 250.00,
+                height: 50.00,
+                //margin: EdgeInsets.only(bottom: 60.0),
+                child: RaisedButton(color: Colors.green,
+                textColor: Colors.white,
+                child: Text(
+                  "PSL TO ENGLISH",
+                   style: TextStyle(fontSize: 17.5),
+                   textAlign: TextAlign.center, 
+                ),
+                onPressed: (){}
+                ),
+              ),
+        ])
+            ),
+        ],) ,
+      ),
     );
   }
 }
+
+
+
