@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hum_nava/translate_psl2eng.dart';
 
 
-class Translate extends StatefulWidget
+class TranslatePsl2eng extends StatefulWidget
 {
  @override
   State<StatefulWidget> createState() {
-    return _Translate();
+    return _TranslatePsl2eng();
   }
 }
 
 
-class _Translate extends State <Translate> {
+class _TranslatePsl2eng extends State <TranslatePsl2eng> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +35,14 @@ class _Translate extends State <Translate> {
             margin: EdgeInsets.only(top: 40.0, left: 20),
             alignment: Alignment.topCenter,
             width: 300,
+          
             child: TextField(
-              decoration: InputDecoration(
+              style: new TextStyle(
+              fontSize: 20.0,
+              height: 4,
+              color: Colors.black,                  
+            ),
+                decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Type here..'
               ),
@@ -81,14 +86,11 @@ class _Translate extends State <Translate> {
                 child: RaisedButton(color: Colors.green,
                 textColor: Colors.white,
                 child: Text(
-                  "PSL TO ENGLISH",
+                  "ENGLISH TO PSL",
                    style: TextStyle(fontSize: 17.5),
                    textAlign: TextAlign.center, 
                 ),
-                onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> TranslatePsl2eng()));
-
-              }
+                onPressed: (){}
                 ),
               ),
         ])
