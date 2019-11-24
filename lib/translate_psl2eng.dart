@@ -95,7 +95,8 @@ class _TranslatePsl2eng extends State <TranslatePsl2eng> {
               ),
         ])
             ),
-        ],) ,
+        ],
+        ),
       ),
     );
   }

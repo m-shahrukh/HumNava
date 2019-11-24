@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hum_nava/translate_psl2eng.dart';
+import './keyboard.dart';
 
 
 class Translate extends StatefulWidget
@@ -93,6 +94,7 @@ class _Translate extends State <Translate> {
               ),
         ])
             ),
+            Keyboard(),
         ],) ,
       ),
     );

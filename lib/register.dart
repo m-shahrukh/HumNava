@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'dart:async';
+//import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hum_nava/completeregister.dart';
 import 'package:image_picker/image_picker.dart';
